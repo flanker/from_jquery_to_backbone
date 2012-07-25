@@ -9,8 +9,9 @@ get '/' do
 end
 
 post '/tweet/create' do
+  content_type :json
   {
     :tweet => params[:tweet],
-    :created_at => Time.now.strftime("%D %R")
+    :created_at => Time.now.strftime("%D %T")
   }.to_json
 end

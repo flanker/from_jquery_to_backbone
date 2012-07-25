@@ -1,0 +1,27 @@
+.container {
+  width: 720px;
+}
+
+.btn-tweet {
+  margin-left: 450px;
+}
+.timeline {
+  margin: 20px;
+  border: 1px solid #DDD;
+  border-collapse: separate;
+  background-color: #FFF;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.timeline li:first-child {
+  border-top: 0;
+}
+.timeline li {
+  list-style: none;
+  padding: 15px 20px;
+  border-top: 1px solid #DDD;
+}
+.timeline li:hover {
+  background-color: #EEE;
+}

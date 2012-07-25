@@ -1,19 +1,27 @@
 %html
   %head
     %title jQuery => Backbone
-    %script{:src => '/jquery.js', :type => 'text/javascript'}
-    %script{:src => '/app.js', :type => 'text/javascript'}
+    %script{:src => '/js/jquery.js', :type => 'text/javascript'}
+    %script{:src => '/js/bootstrap.min.js', :type => 'text/javascript'}
+    %script{:src => '/js/app.js', :type => 'text/javascript'}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/css/bootstrap.min.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/css/app.css"}
 
   %body
-    %h1 From jQuery To Backbone
-    %div
-      %form{:id => 'tweets'}
-        %label{:for => 'tweet'} What's happening?
-        %input{:id => 'tweet'}
-        %input{:type => 'submit'}
-    %div
-      %h2 Your timeline:
-      %ul
-        %li old tweet
-        %li older tweet
-        %li oldest tweet
+    .container
+      .well
+        %h1 From jQuery To Backbone
+      .well
+        %form{:id => 'tweets'}
+          .control-group
+            %h3 What's happening?
+          .control-group
+            %textarea.input-xxlarge{:id => 'tweet', :rows => '5'}
+          .control-group
+            %input.btn.btn-primary.btn-tweet{:type => 'submit', :value => 'Tweet'}
+      .well
+        %h2 Tweet timeline:
+        %ul.timeline
+          %li old tweet
+          %li older tweet
+          %li oldest tweet
