@@ -1,0 +1,1 @@
+rvm use --create 1.9.2-p320@from_jquery_to_backbone
