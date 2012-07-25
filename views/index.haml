@@ -9,19 +9,25 @@
 
   %body
     .container
-      .well
-        %h1 From jQuery To Backbone
-      .well
+      .part
+        %h1.title From jQuery To Backbone
+      .part
         %form{:id => 'tweets'}
           .control-group
             %h3 What's happening?
           .control-group
-            %textarea.input-xxlarge{:id => 'tweet', :rows => '5'}
+            %textarea.input-xxlarge{:id => 'tweet-box', :rows => '5'}
           .control-group
             %input.btn.btn-primary.btn-tweet{:type => 'submit', :value => 'Tweet'}
-      .well
-        %h2 Tweet timeline:
-        %ul.timeline
-          %li old tweet
-          %li older tweet
-          %li oldest tweet
+      .timeline
+        %h3.hint Tweet timeline:
+        %ul
+          %li 1 day ago: old tweet
+          %li 2 day ago: older tweet
+          %li 3 day ago: oldest tweet
+          %li 4 day ago: oldest tweet
+          %li 5 day ago: oldest tweet
+          %li 6 day ago: oldest tweet
+          %li 7 day ago: oldest tweet
+          %li 8 day ago: oldest tweet
+          %li 9 day ago: oldest tweet

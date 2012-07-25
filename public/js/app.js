@@ -6,10 +6,10 @@ $(document).ready(function() {
             url: '/tweet/create',
             type: 'POST',
             dataType: 'json',
-            data: { tweet: $('#tweet', this).val() },
+            data: { tweet: $('#tweet-box', this).val() },
             success: function(data) {
                 $('ul').prepend('<li>' + data.created_at + ': ' + data.tweet + '</li>');
-                $('#tweet').val('');
+                $('#tweet-box').val('');
             }
         });
     });
