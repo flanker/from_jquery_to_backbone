@@ -8,7 +8,7 @@ $(document).ready(function() {
             dataType: 'json',
             data: { tweet: $('#tweet-box', this).val() },
             success: function(data) {
-                $('ul').prepend('<li>' + data.created_at + ': ' + data.tweet + '</li>');
+                $('.timeline ul').prepend('<li>' + data.created_at + ': ' + data.tweet + '</li>');
                 $('#tweet-box').val('');
             }
         });

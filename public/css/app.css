@@ -5,7 +5,8 @@ body {
   background-repeat: no-repeat;
   background-color: #C0DEED;
 }
-.container {
+.main-container {
+  margin-top: 40px;
   width: 580px;
   padding: 0 20px;
   background: url(/img/wash-white-30.png);
