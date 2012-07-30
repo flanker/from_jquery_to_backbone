@@ -43,12 +43,7 @@
       .timeline
         %h3.hint Tweet timeline:
         %ul
-          %li 1 day ago: old tweet
-          %li 2 day ago: older tweet
-          %li 3 day ago: oldest tweet
-          %li 4 day ago: oldest tweet
-          %li 5 day ago: oldest tweet
-          %li 6 day ago: oldest tweet
-          %li 7 day ago: oldest tweet
-          %li 8 day ago: oldest tweet
-          %li 9 day ago: oldest tweet
+          - 10.times.each do |index|
+            %li
+              .tweet-date= (index + 1).to_s + ' day ago'
+              .tweet-content a very very very old tweet

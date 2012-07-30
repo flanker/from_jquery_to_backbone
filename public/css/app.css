@@ -63,3 +63,10 @@ body {
 .timeline li:hover {
   background-color: #EEE;
 }
+.timeline li .tweet-date {
+  font-weight: bold;
+}
+.timeline li .tweet-content {
+  text-indent: 2em;
+  padding-top: 5px;
+}
