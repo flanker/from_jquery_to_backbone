@@ -1,5 +1,0 @@
-App = {};
-
-App.BaseApp = function () {
-
-};
