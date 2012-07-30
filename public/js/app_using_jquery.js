@@ -6,6 +6,8 @@ App.AppUsingJquery = App.BaseApp.extend({
 
     afterInit: function () {
 
+      var self = this;
+
       $('#tweets').submit(function(e) {
           e.preventDefault();
 
@@ -15,11 +17,7 @@ App.AppUsingJquery = App.BaseApp.extend({
               dataType: 'json',
               data: { tweet: $('#tweet-box', this).val() },
               success: function(data) {
-                  var fn = haml.compileHaml({sourceId: 'tweet-template'});
-                  var html = fn({model: {
-                    created_at: data.created_at,
-                    tweet: data.tweet
-                  }});
+                  var html = self.renderTemplate('tweet-template', data);
                   $('.timeline ul').prepend(html);
                   $('#tweet-box').val('');
               }

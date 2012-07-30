@@ -23,6 +23,11 @@ App.BaseApp = {
       }
     };
 
+    object.renderTemplate = function (sourceId, model) {
+      var fn = haml.compileHaml({sourceId: sourceId});
+      return fn({model: model});
+    };
+
     return function () {
       return object;
     };
