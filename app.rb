@@ -9,11 +9,11 @@ get '/' do
 end
 
 get '/jquery' do
-  haml :index
+  haml :jquery
 end
 
 get '/backbone' do
-  "coming soon"
+  haml :backbone
 end
 
 post '/tweet/create' do
