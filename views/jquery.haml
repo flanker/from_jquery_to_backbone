@@ -1,2 +1,21 @@
-%script{:src => '/js/using_jquery/base_app.js', :type => 'text/javascript'}
-%script{:src => '/js/using_jquery/app_using_jquery.js', :type => 'text/javascript'}
+- content_for :javascript do
+  %script{:src => '/js/using_jquery/base_app.js', :type => 'text/javascript'}
+  %script{:src => '/js/using_jquery/app_using_jquery.js', :type => 'text/javascript'}
+
+.part
+  %h1.title From jQuery To Backbone
+.part
+  %form{:id => 'tweets'}
+    .control-group
+      %h3 What's happening?
+    .control-group
+      %textarea.input-xxlarge{:id => 'tweet-box', :rows => '5'}
+    .control-group
+      %input.btn.btn-primary.btn-tweet{:type => 'submit', :value => 'Tweet'}
+.timeline
+  %h3.hint Tweet timeline:
+  %ul
+    - 10.times.each do |index|
+      %li
+        .tweet-date= (index + 1).to_s + ' day ago'
+        .tweet-content a very very very old tweet

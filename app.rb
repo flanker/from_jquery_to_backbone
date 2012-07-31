@@ -1,6 +1,7 @@
 require 'sinatra'
+require "sinatra/content_for"
+require "sinatra/json"
 require 'haml'
-require 'json'
 
 set :haml, :format => :html5
 
@@ -17,9 +18,11 @@ get '/backbone' do
 end
 
 post '/tweet/create' do
-  content_type :json
-  {
-    :tweet => params[:tweet],
-    :created_at => Time.now.strftime("%D %T")
-  }.to_json
+  json :tweet => params[:tweet], :created_at => now
+end
+
+private
+
+def now
+  Time.now.strftime("%D %T")
 end

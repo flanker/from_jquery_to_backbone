@@ -1,15 +1,25 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    backports (2.6.2)
+    eventmachine (0.12.10)
     haml (3.1.6)
-    json (1.7.3)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
+    rack-test (0.6.1)
+      rack (>= 1.0)
     sinatra (1.3.2)
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
       tilt (~> 1.3, >= 1.3.3)
+    sinatra-contrib (1.3.1)
+      backports (>= 2.0)
+      eventmachine
+      rack-protection
+      rack-test
+      sinatra (~> 1.3.0)
+      tilt (~> 1.3)
     tilt (1.3.3)
 
 PLATFORMS
@@ -17,5 +27,5 @@ PLATFORMS
 
 DEPENDENCIES
   haml
-  json
   sinatra
+  sinatra-contrib

@@ -28,22 +28,6 @@
               %li
                 %a{:href => 'https://github.com/flanker/from_jquery_to_backbone'} Github
     .container.main-container
-      .part
-        %h1.title From jQuery To Backbone
-      .part
-        %form{:id => 'tweets'}
-          .control-group
-            %h3 What's happening?
-          .control-group
-            %textarea.input-xxlarge{:id => 'tweet-box', :rows => '5'}
-          .control-group
-            %input.btn.btn-primary.btn-tweet{:type => 'submit', :value => 'Tweet'}
-      .timeline
-        %h3.hint Tweet timeline:
-        %ul
-          - 10.times.each do |index|
-            %li
-              .tweet-date= (index + 1).to_s + ' day ago'
-              .tweet-content a very very very old tweet
+      = yield
 
-    = yield
+    = yield_content :javascript
