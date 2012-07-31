@@ -10,14 +10,9 @@
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/app.css'}
 
   %body
-    #haml-templates
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          %a.btn.btn-navbar{'data-target' => '.nav-collapse', 'data-toggle' => 'collapse'}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
           %a.brand{:href => '/'} jQuery => Backbone
           .nav-collapse
             %ul.nav
@@ -30,4 +25,5 @@
     .container.main-container
       = yield
 
+    #haml-templates
     = yield_content :javascript
