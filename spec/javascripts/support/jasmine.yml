@@ -1,0 +1,21 @@
+src_files:
+    - public/js/lib/jquery.js
+    - public/js/lib/underscore.js
+    - public/js/lib/underscore.string.js
+    - public/js/lib/haml.js
+    - public/js/lib/backbone.js
+    - public/js/using_backbone/base_app.js
+    - public/js/using_backbone/models/*.js
+    - public/js/using_backbone/views/*.js
+    - spec/javascripts/support/jasmine-jquery-1.3.1.js
+
+stylesheets:
+
+helpers:
+    - spec-helper.js
+
+spec_files:
+
+src_dir:
+
+spec_dir:
