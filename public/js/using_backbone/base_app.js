@@ -7,7 +7,8 @@ App.config = {};
 
 App.config.templates = [
   'tweets',
-  'title'
+  'title',
+  'tweet-form'
 ];
 
 App.helper.loadTemplates = function (callback, options) {
