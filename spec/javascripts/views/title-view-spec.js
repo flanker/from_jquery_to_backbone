@@ -11,7 +11,7 @@ describe('App.views.TitleView', function () {
   describe('#render', function () {
 
     it('should render the application title', function () {
-      expect($('.title', view.el)).toExist();
+      expect($('.title', view.el)).toHaveText('From jQuery To Backbone');
     });
 
   });
