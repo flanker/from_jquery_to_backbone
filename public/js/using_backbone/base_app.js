@@ -9,11 +9,15 @@ App.config.templates = [
   'tweets'
 ];
 
-App.helper.loadTemplates = function (callback) {
+App.helper.loadTemplates = function (callback, options) {
   var loadedTemplates = 0;
 
   $(App.config.templates).each(function (index, name) {
-    $.get('/js/using_backbone/templates/' + name + '-template.html.haml', function (template) {
+    var path = '/js/using_backbone/templates/' + name + '-template.html.haml';
+    if (options && options.publicPath) {
+      path = options.publicPath + path;
+    }
+    $.get(path, function (template) {
       registerTemplate(name, template);
       loadedTemplates ++;
       if (isLoadComplete()) {
