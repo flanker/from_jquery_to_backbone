@@ -6,7 +6,8 @@ App.helper = {};
 App.config = {};
 
 App.config.templates = [
-  'tweets'
+  'tweets',
+  'title'
 ];
 
 App.helper.loadTemplates = function (callback, options) {
