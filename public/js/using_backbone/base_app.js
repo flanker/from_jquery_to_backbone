@@ -31,3 +31,8 @@ App.helper.loadTemplates = function (callback) {
     return loadedTemplates === App.config.templates.length;
   };
 };
+
+App.helper.renderTemplate = function (sourceId, model) {
+  var fn = haml.compileHaml({sourceId: sourceId});
+  return fn({model: model});
+};

@@ -7,8 +7,7 @@ App.views.TweetsView = Backbone.View.extend({
   },
 
   render: function () {
-    var fn = haml.compileHaml({sourceId: 'tweets-template'});
-    var html = fn({model: this.model});
+    var html = App.helper.renderTemplate('tweets-template', this.model);
     $(this.el).html(html);
   }
 
