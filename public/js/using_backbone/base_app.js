@@ -38,5 +38,5 @@ App.helper.loadTemplates = function (callback, options) {
 
 App.helper.renderTemplate = function (sourceId, model) {
   var fn = haml.compileHaml({sourceId: sourceId});
-  return fn({model: model});
+  return fn(model);
 };
