@@ -24,7 +24,7 @@ App.helper.loadTemplates = function (callback) {
 
   var registerTemplate = function (name, template) {
     var templateElement = $('<script type="text/haml-template" id="' + name + '-template"></script>');
-    templateElement.html(template).appendTo($('#haml-templates'));
+    templateElement.html(template).appendTo($('body'));
   };
 
   var isLoadComplete = function () {
