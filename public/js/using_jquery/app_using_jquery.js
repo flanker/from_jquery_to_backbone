@@ -1,30 +1,30 @@
 App.AppUsingJquery = App.BaseApp.extend({
 
-    templates: [
-      'tweet'
-    ],
+  templates: [
+    'tweet'
+  ],
 
-    afterInit: function () {
+  afterInit: function () {
 
-      var self = this;
+    var self = this;
 
-      $('#tweets').submit(function(e) {
-          e.preventDefault();
+    $('#tweets').submit(function(e) {
+      e.preventDefault();
 
-          $.ajax({
-              url: '/tweet/create',
-              type: 'POST',
-              dataType: 'json',
-              data: { tweet: $('#tweet-box', this).val() },
-              success: function(data) {
-                  var html = self.renderTemplate('tweet-template', data);
-                  $('.timeline ul').prepend(html);
-                  $('#tweet-box').val('');
-              }
-          });
+      $.ajax({
+        url: '/tweet/create',
+        type: 'POST',
+        dataType: 'json',
+        data: { tweet: $('#tweet-box', this).val() },
+        success: function(data) {
+          var html = self.renderTemplate('tweet-template', data);
+          $('.timeline ul').prepend(html);
+          $('#tweet-box').val('');
+        }
       });
+    });
 
-    }
+  }
 
 });
 
