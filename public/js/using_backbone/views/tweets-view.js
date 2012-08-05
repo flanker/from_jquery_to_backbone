@@ -1,6 +1,6 @@
 App.views.TweetsView = Backbone.View.extend({
 
-  className: 'tweets',
+  className: 'timeline',
 
   initialize: function () {
     this.render();
