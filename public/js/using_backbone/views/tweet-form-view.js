@@ -3,7 +3,8 @@ App.views.TweetFormView = Backbone.View.extend({
   className: 'part',
 
   events: {
-    'blur #tweet-box': 'updateTweet'
+    'blur #tweet-box': 'updateTweet',
+    'click input[type="submit"]': 'save'
   },
 
   initialize: function () {
@@ -18,6 +19,11 @@ App.views.TweetFormView = Backbone.View.extend({
   updateTweet: function () {
     var tweet = $('#tweet-box', this.el).val();
     this.model.set('tweet', tweet);
+  },
+
+  save: function (e) {
+    this.model.save();
+    return false;
   }
 
 });

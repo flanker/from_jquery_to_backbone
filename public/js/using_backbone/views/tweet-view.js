@@ -13,5 +13,4 @@ App.views.TweetView = Backbone.View.extend({
     $(this.el).html(html);
   }
 
-
 });

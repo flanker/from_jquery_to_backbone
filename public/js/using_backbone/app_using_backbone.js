@@ -6,11 +6,16 @@ for (var i = 0; i < 10; i++) {
   });
 }
 
+var currentTweet = new App.models.Tweet({
+  tweet: '',
+  created_at: ''
+});
+
 $(function () {
   App.helper.loadTemplates(function () {
     var childViews = [
       new App.views.TitleView().el,
-      new App.views.TweetFormView().el,
+      new App.views.TweetFormView({model: currentTweet}).el,
       new App.views.TweetsView({collection: new App.models.Tweets(tweets)}).el
     ];
     $('.main-container').html(childViews);

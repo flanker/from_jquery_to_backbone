@@ -35,4 +35,17 @@ describe('App.views.TweetFormView', function () {
 
   });
 
+  describe('save', function () {
+
+    beforeEach(function () {
+      spyOn(tweet, 'save');
+      $('input[type="submit"]', view.el).click();
+    });
+
+    it('should save the tweet', function () {
+      expect(tweet.save).toHaveBeenCalled();
+    });
+
+  });
+
 });

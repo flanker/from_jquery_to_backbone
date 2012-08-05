@@ -1,7 +1,8 @@
 require 'sinatra'
-require "sinatra/content_for"
-require "sinatra/json"
+require 'sinatra/content_for'
+require 'sinatra/json'
 require 'haml'
+require 'json'
 
 set :haml, :format => :html5
 
@@ -19,6 +20,11 @@ end
 
 post '/tweet/create' do
   json :tweet => params[:tweet], :created_at => now
+end
+
+post '/tweets' do
+  data = JSON.parse(request.body.read)
+  json :tweet => data['tweet'], :created_at => now
 end
 
 private
