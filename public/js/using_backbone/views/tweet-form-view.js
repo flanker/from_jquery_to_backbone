@@ -12,7 +12,7 @@ App.views.TweetFormView = Backbone.View.extend({
   },
 
   render: function () {
-    var html = App.helper.renderTemplate('tweet-form-template', {});
+    var html = App.helper.renderTemplate('tweet-form-template', {model: this.model});
     $(this.el).html(html);
   },
 

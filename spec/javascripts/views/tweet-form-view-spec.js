@@ -12,8 +12,8 @@ describe('App.views.TweetFormView', function () {
 
   describe('#render', function () {
 
-    it('should render the text box', function () {
-      expect($('textarea#tweet-box', view.el)).toExist();
+    it('should render an empty text box', function () {
+      expect($('textarea#tweet-box', view.el)).toHaveText('');
     });
 
     it('should render the tweet button', function () {

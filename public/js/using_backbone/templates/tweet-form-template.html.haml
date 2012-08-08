@@ -2,6 +2,6 @@
   .control-group
     %h3 What's happening?
   .control-group
-    %textarea#tweet-box.input-xxlarge{rows: '5'}
+    %textarea#tweet-box.input-xxlarge{rows: '5'}<= model.get('tweet')
   .control-group
     %input.btn.btn-primary.btn-tweet{type: 'submit', value: 'Tweet'}
