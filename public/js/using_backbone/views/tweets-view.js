@@ -4,6 +4,8 @@ App.views.TweetsView = Backbone.View.extend({
 
   initialize: function () {
     this.render();
+    _(this).bindAll('added');
+    this.collection.on('add', this.added);
   },
 
   render: function () {
@@ -18,6 +20,11 @@ App.views.TweetsView = Backbone.View.extend({
       return new App.views.TweetView({model: tweet}).el;
     });
     $('ul', this.el).html(childViews);
+  },
+
+  added: function (tweet) {
+    var newTweet = new App.views.TweetView({model: tweet}).el;
+    $('ul', this.el).prepend(newTweet);
   }
 
 });

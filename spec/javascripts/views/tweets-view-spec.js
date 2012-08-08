@@ -1,7 +1,7 @@
 describe('App.views.TweetsView', function () {
 
   var views;
-  var tweet;
+  var tweets;
 
   beforeEach(function () {
     tweets = new App.models.Tweets([{
@@ -24,6 +24,21 @@ describe('App.views.TweetsView', function () {
 
     it('should render two tweets', function () {
       expect($('.tweet-date', view.el).length).toEqual(2);
+    });
+
+  });
+
+  describe('should render the new tweet', function () {
+
+    beforeEach(function () {
+      tweets.add({
+        tweet: 'new message',
+        created_at: 'just now'
+      });
+    });
+
+    it('should have rendered three tweets', function () {
+      expect($('.tweet-date', view.el).length).toEqual(3);
     });
 
   });
