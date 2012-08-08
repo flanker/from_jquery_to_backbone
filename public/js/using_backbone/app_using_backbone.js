@@ -1,6 +1,6 @@
-var tweets = [];
+var rawTweets = [];
 for (var i = 0; i < 10; i++) {
-  tweets.push({
+  rawTweets.push({
     tweet: 'a old tweet',
     created_at: i + ' days ago'
   });
@@ -11,6 +11,8 @@ var currentTweet = new App.models.Tweet({
   created_at: ''
 });
 
+var tweets = new App.models.Tweets(rawTweets);
+
 $(function () {
   App.helper.loadTemplates(function () {
     var childViews = [
@@ -18,6 +20,7 @@ $(function () {
       new App.views.TweetFormView({model: currentTweet}).el,
       new App.views.TweetsView({collection: new App.models.Tweets(tweets)}).el
     ];
-    $('.main-container').html(childViews);
+    var tweetAppView = new App.views.TweetAppView({model: currentTweet, collection: tweets}).el;
+    $('.main-container').html(tweetAppView);
   });
 });
