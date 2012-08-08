@@ -1,22 +1,28 @@
 App.views.TweetAppView = Backbone.View.extend({
 
   initialize: function () {
-    this.createCurrentTweet();
     this.render();
+    _(this).bindAll('saved');
+    this.model.on('sync', this.saved);
   },
 
   render: function () {
-    var childViews = [
-      new App.views.TitleView().el,
-      new App.views.TweetFormView({model: this.currentTweet}).el,
-      new App.views.TweetsView({collection: this.collection}).el
-    ];
-    $(this.el).html(childViews);
+    this.titleView = new App.views.TitleView();
+    this.tweetForm = new App.views.TweetFormView({model: this.model});
+    this.timelineView = new App.views.TweetsView({collection: this.collection});
+    $(this.el).html([this.titleView.el, this.tweetForm.el, this.timelineView.el]);
   },
 
-  createCurrentTweet: function () {
-    this.currentTweet = new App.models.Tweet();
-  }
+  updateTweetForm: function () {
+    this.model.on('sync', this.saved);
+    this.tweetForm.model = this.model;
+    this.tweetForm.render();
+  },
 
+  saved: function () {
+    this.collection.add(this.model.clone());
+    this.model = new App.models.Tweet();
+    this.updateTweetForm();
+  }
 
 });

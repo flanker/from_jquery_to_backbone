@@ -2,11 +2,13 @@ describe('App.views.TweetAppView', function () {
 
   var view;
   var tweets;
+  var tweet;
 
   beforeEach(function () {
     tweets = new App.models.Tweets();
+    tweet = new App.models.Tweet();
     loadTemplates(function () {
-      view = new App.views.TweetAppView({collection: tweets});
+      view = new App.views.TweetAppView({collection: tweets, model: tweet});
     });
   });
 
