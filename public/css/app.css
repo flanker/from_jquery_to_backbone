@@ -11,6 +11,12 @@ body {
   padding: 0 20px;
   background: url(/img/wash-white-30.png);
 }
+.backbone .navbar .nav a.backbone,
+.jquery .navbar .nav a.jquery {
+  color: white;
+  text-decoration: none;
+  background-color: #222;
+}
 .part {
   -webkit-border-radius: 8px;
      -moz-border-radius: 8px;

@@ -9,17 +9,17 @@
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/bootstrap.min.css'}
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/app.css'}
 
-  %body
+  %body{:class => self.url.split('/').last.downcase}
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
           %a.brand{:href => '/'} jQuery => Backbone
           .nav-collapse
             %ul.nav
-              %li.active
-                %a{:href => '/jquery'} jQuery
               %li
-                %a{:href => '/backbone'} Backbone
+                %a.jquery{:href => '/jquery'} jQuery
+              %li
+                %a.backbone{:href => '/backbone'} Backbone
               %li
                 %a{:href => 'https://github.com/flanker/from_jquery_to_backbone'} Github
     .container.main-container
