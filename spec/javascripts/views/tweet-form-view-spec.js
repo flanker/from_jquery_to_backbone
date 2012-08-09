@@ -26,7 +26,6 @@ describe('App.views.TweetFormView', function () {
 
     beforeEach(function () {
       $('#tweet-box', view.el).val('a new message').trigger('blur');
-
     });
 
     it('should update the tweet model', function () {
