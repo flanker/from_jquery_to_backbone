@@ -19,8 +19,8 @@ GEM
     libwebsocket (0.1.5)
       addressable
     multi_json (1.3.6)
-    rack (1.4.1)
-    rack-protection (1.2.0)
+    rack (1.6.11)
+    rack-protection (1.5.5)
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
