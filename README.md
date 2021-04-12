@@ -1,3 +1,5 @@
+# RIP backbone & jQuery :)
+
 from jquery to backbone
 =======================
 
